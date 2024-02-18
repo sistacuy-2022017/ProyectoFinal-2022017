@@ -1,0 +1,19 @@
+{
+  "name": "proyectofinal-2022017",
+  "version": "1.0.0",
+  "description": "es un proyecto importante elaborado en dos partes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Sebastianic",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.3"
+  }
+}
