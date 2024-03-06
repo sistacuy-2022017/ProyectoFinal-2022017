@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const tipoUser = ['ADMIN','CLIENT'];
 
@@ -17,8 +17,7 @@ const UserSchema = mongoose.Schema({
     },
     role: {
         type: String,
-        enum: tipoUser,
-        required: [true, "the category is a parameter required"],
+        enum: tipoUser
     },
     userState: {
         type: Boolean,
@@ -26,11 +25,11 @@ const UserSchema = mongoose.Schema({
     }
 });
 
-/*UserSchema.methods.toJSON = function(){
+UserSchema.methods.toJSON = function(){
     const { __v, _id, ...usera} = this.toObject();
     usera.uid = _id;
     return usera;
-}*/
+}
 
 
 export default mongoose.model('Users', UserSchema);

@@ -1,16 +1,18 @@
 import userModel from "../users/user.model.js";
 
-export const verificarUser = async (role = '') => {
+export const verificarUser = (req, res, next) => {
     const { email } = req.body;
 
-    // Si el correo contiene "@org.gt", asigna "ADMIN"
-    if (email && email.includes("@org.gt")) {
-        req.body.role = 'ADMIN';
-    }else if(email && email.includes("@kinal.edu.gt")){
-        req.body.role = 'CLIENT'
-    }else{
-        throw new Error("el email debe ser de alguno de los siguientes dominios @org.gt o @kinal.edu.gt")
+    let role = null; 
+
+    if (email.includes("@org.gt")) {
+        role = 'ADMIN';
+    } else if (email.includes("@kinal.edu.gt")) {
+        role = 'CLIENT';
+    } else {
+        return res.status(400).json({ error: "El email debe ser de alguno de los siguientes dominios: @org.gt o @kinal.edu.gt" });
     }
 
+    req.body.role = role;
     next();
-}
+};
