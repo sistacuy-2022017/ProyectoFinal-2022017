@@ -13,9 +13,17 @@ const ProductSchema = mongoose.Schema({
         type: Number,
         required: [true, "The price is a required parameter"],
     },
+    stockProduc: {
+        type: Number,
+        required: [true, "the stock is a required parameter"],
+    },
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
+    },
+    stateProduct: {
+        type: Boolean,
+        default: true,
     }
 });
 
