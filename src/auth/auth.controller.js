@@ -1,7 +1,6 @@
 import { response, request } from "express";
 import Users from '../users/user.model.js';
 import bcryptjs from 'bcryptjs';
-import { verificarEmail } from "../middlewares/auth-validators.js";
 import { generarJWT } from "../helpers/generar-jwt.js";
 
 export const userLogi = async (req = request, res = response) => {

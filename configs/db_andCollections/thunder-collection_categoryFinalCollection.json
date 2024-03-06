@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "categoryFinalCollection",
+    "dateExported": "2024-03-06T22:34:56.386Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "bd7f3e49-2ed3-4d82-b68b-ff9e2cb8e97a",
+            "colId": "cafb16b7-fe0d-4a0f-a9c8-73cd9c28fcde",
+            "containerId": "",
+            "name": "categoryPost",
+            "url": "http://localhost:3000/FinalApi/v1/cate",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-06T22:04:34.106Z",
+            "modified": "2024-03-06T22:06:46.750Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nameCategory\": \"Computo\",\n  \"descriptionCategory\": \"computadoras y perifericos\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
