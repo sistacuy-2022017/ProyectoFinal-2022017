@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Product from '../product/product.model.js'
 
 const facturaSchema = mongoose.Schema({
     user: {
@@ -11,9 +12,17 @@ const facturaSchema = mongoose.Schema({
     },
     total: {
         type: Number,
-        required: true
-    }
+    },
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product'
+    }]
 });
 
+facturaSchema.methods.toJSON = function () {
+    const { __v, _id, ...factures } = this.toObject();
+    factures.uid = _id;
+    return factures;
+}
 
-export default mongoose.model('factura', facturaSchema);
+export default mongoose.model('Factura', facturaSchema);
