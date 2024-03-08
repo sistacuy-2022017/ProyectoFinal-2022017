@@ -1,14 +1,21 @@
 import mongoose from "mongoose";
 
+const categories = ['Tecnología', 'Salud', 'Finanzas', 'Educación', 'Comercio', 'Manufactura', 'Otro']
+
 const CategorySchema = mongoose.Schema({
     nameCategory: {
         type: String,
-        required: [true, "The name is a required parameter"],
+        enum: categories,
+        required: [true, "The categories are a paremeter required"],
     },
     descriptionCategory: {
         type: String,
         required: [true, "The description is a required parameter"],
     },
+    categoryState: {
+        type: Boolean,
+        default: true,
+    }
 });
 
 CategorySchema.methods.toJSON = function () {

@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import Admin from '../users/user.model.js'
+import categoryModel from '../categorias/category.model.js';
 
 export const validarJWT = async (req, res, next) => {
     const token = req.header("x-token");
@@ -27,7 +28,6 @@ export const validarJWT = async (req, res, next) => {
         }
 
         req.admin = admin;
-
         next();
 
     } catch (error) {
