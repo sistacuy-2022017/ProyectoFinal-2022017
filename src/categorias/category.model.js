@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
 
-const categories = ['Tecnología', 'Salud', 'Finanzas', 'Educación', 'Comercio', 'Manufactura', 'Otro']
-
 const CategorySchema = mongoose.Schema({
     nameCategory: {
         type: String,
-        enum: categories,
         required: [true, "The categories are a paremeter required"],
     },
     descriptionCategory: {

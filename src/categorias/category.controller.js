@@ -1,74 +1,99 @@
 import { response, request } from "express";
 import Category from './category.model.js';
-import { existeCategoryByName } from "../middlewares/category-validators.js";
+import User from "../users/user.model.js";
+import Product from "../product/product.model.js";
 
-export const categoryPost = async (req = request, res = response) => {
+export const categoryPost = async (req, res) => {
     const { nameCategory, descriptionCategory } = req.body;
+    const usuariovalid = req.admin;
 
-    const categ = new Category({ nameCategory, descriptionCategory });
-    console.log(categ);
+    // Verifica si el usuario es un administrador
+    
+    if (usuariovalid.role !== 'ADMIN') {
+        return res.status(400).json({
+            msg: '|| NO TIENES PERMISO PARA HACER ESTO PQ NO ERES ADMIN:C ||'
+        });
+    }
+    try {
+        const newCategory = new Category({ nameCategory, descriptionCategory });
+        await newCategory.save();
 
-    await categ.save();
+        res.status(200).json({
+            category: newCategory
+        });
+    } catch (error) {
+        console.error("Error al crear una nueva categoría:", error);
+        res.status(500).json({
+            error: 'Hubo un error al crear la categoría.'
+        });
+    }
+};
 
-    res.status(200).json({
-        categ
-    })
-
-}
 
 export const categoryPut = async (req, res) => {
     const { id } = req.params;
     const usuariovalid = req.admin;
-    const { _id, ...resto } = req.body;
+
 
     if (usuariovalid.role !== 'ADMIN') {
         return res.status(400).json({
-            msg: '|| No tienes permisos para realizar esta acción ||'
+            msg: '|| NO TIENES PERMISO PARA HACER ESTO PQ NO ERES ADMIN:C ||'
         });
     }
 
-    try {
-        if (resto.nameCategory) {
-            await existeCategoryByName(resto.nameCategory);
-        }
+    const { _id, ...resto } = req.body;
 
-        // Verificar si el nivel de impacto y la categoría empresarial existen
-        if (resto.nameCategory) {
-            const categoriasExistentes = [
-                'Tecnología', 'Salud', 'Finanzas', 'Educación', 'Comercio', 'Manufactura', 'Otro'
-            ];
+    await Category.findByIdAndUpdate(id, resto);
 
-            if (!categoriasExistentes.includes(resto.nameCategory)) {
-                throw new Error(`La categoría  "${resto.nameCategory}" no es válida. Debe ser una de: ${categoriasExistentes.join(", ")}`);
-            }
-        }
+    const catego = await Category.find({ _id: id });
 
-        await Category.findByIdAndUpdate(id, resto);
-
-        const catego = await Category.find({ _id: id });
-
-        res.status(200).json({
-            msg: '|| Categoria Actualizada ||',
-            catego
-        });
-
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ msg: 'Error al actualizar la categoría' });
-    }
-
+    res.status(200).json({
+        msg: '|| Categoria Actualizada ||',
+        catego
+    });
 
 }
 
-
-const categoryDelete = async (req, res) => {
+export const categoryDelete = async (req, res) => {
     const { id } = req.params;
-    await Category.findByIdAndUpdate(id, { categoryState: false });
+    const usuariovalid = req.admin;
 
-    const alumno = await Category.findOne({ _id: id });
+    try {
 
-    res.status(200).json({
-        msg: 'Usuario eliminado, se paso de joya',
-        alumno
-    });
+        if (usuariovalid.role !== 'ADMIN') {
+            return res.status(400).json({
+                msg: '|| NO TIENES PERMISO PARA HACER ESTO PQ NO ERES ADMIN:C ||'
+            });
+        }
+
+        // Encuentra la categoría que se va a eliminar
+        const categoryToDelete = await Category.findById(id);
+
+        // Encuentra todos los productos que pertenecen a esta categoría
+        const productsToUpdate = await Product.find({ category: id });
+
+        // Encuentra una nueva categoría a la que se transferirán los productos
+        const nuevaCategoria = await Category.findOne({ categoryState: true });
+
+        if (!nuevaCategoria) {
+            return res.status(404).json({
+                error: 'No hay categorías disponibles para transferir los productos.'
+            });
+        }
+
+        // Actualiza la categoría de los productos para que apunten a la nueva categoría
+        await Product.updateMany({ category: id }, { $set: { category: nuevaCategoria._id } });
+
+        // Marca la categoría eliminada como inactiva
+        await Category.findByIdAndUpdate(id, { categoryState: false });
+
+        res.status(200).json({
+            msg: 'Categoría eliminada y productos transferidos exitosamente.'
+        });
+    } catch (error) {
+        console.error("Error al eliminar la categoría y transferir productos:", error);
+        res.status(500).json({
+            error: 'Error al eliminar la categoría y transferir productos.'
+        });
+    }
 }
