@@ -1,27 +1,47 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoryFinalCollection",
-    "dateExported": "2024-03-06T22:34:56.386Z",
+    "dateExported": "2024-03-09T00:16:25.798Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "bd7f3e49-2ed3-4d82-b68b-ff9e2cb8e97a",
-            "colId": "cafb16b7-fe0d-4a0f-a9c8-73cd9c28fcde",
+            "_id": "a1481587-8eb7-4990-bcdf-e1d908d47132",
+            "colId": "6efb4919-b5d0-47ab-8870-11f63c7e6182",
             "containerId": "",
             "name": "categoryPost",
             "url": "http://localhost:3000/FinalApi/v1/cate",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T22:04:34.106Z",
-            "modified": "2024-03-06T22:06:46.750Z",
-            "headers": [],
+            "created": "2024-03-08T23:12:13.081Z",
+            "modified": "2024-03-09T00:14:29.081Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViOWI2MzE1ODJhY2ZmMmQxMmNhYTIiLCJpYXQiOjE3MDk5Mzk3ODAsImV4cCI6MTcwOTk0MzM4MH0.SeGVLf_0Bc5WXrzywCazHdtu82k_ITIfaw8UC8sVoFc"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nameCategory\": \"Computo\",\n  \"descriptionCategory\": \"computadoras y perifericos\"\n}",
+                "raw": "{\n  \"nameCategory\": \"Salud\",\n  \"descriptionCategory\": \"equipo medico\"\n}",
                 "form": []
             },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "0e6d065a-b4c7-4b5d-add3-893ff397c0be",
+            "colId": "6efb4919-b5d0-47ab-8870-11f63c7e6182",
+            "containerId": "",
+            "name": "categoryGet",
+            "url": "http://localhost:3000/FinalApi/v1/cate",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-09T00:10:01.763Z",
+            "modified": "2024-03-09T00:10:12.132Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]

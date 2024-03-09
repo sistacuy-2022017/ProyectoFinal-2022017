@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "loginFinalCollection",
-    "dateExported": "2024-03-06T22:34:49.948Z",
+    "dateExported": "2024-03-09T00:16:55.934Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "afcb9347-2d74-4e5c-8947-f5bc4108bdaa",
-            "colId": "4a3db703-4d7d-4abc-a83a-af6e43e2cd90",
+            "_id": "e5d00fd5-5a96-4edb-bfb1-3840eb5889a2",
+            "colId": "ef93e6d1-6263-44cb-a623-63995c52e6e1",
             "containerId": "",
             "name": "loginUsers",
             "url": "http://localhost:3000/FinalApi/v1/auth",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-05T23:34:23.109Z",
-            "modified": "2024-03-06T05:27:18.880Z",
+            "created": "2024-03-08T23:12:13.131Z",
+            "modified": "2024-03-08T23:12:13.131Z",
             "headers": [],
             "params": [],
             "body": {

@@ -1,28 +1,28 @@
 {
     "client": "Thunder Client",
     "collectionName": "productFinalCollection",
-    "dateExported": "2024-03-06T22:35:02.896Z",
+    "dateExported": "2024-03-09T00:17:22.225Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "4ef54760-2f4d-42f8-bb74-ad4f228132fe",
-            "colId": "c8f9e6de-7899-4842-9b78-70fe5a2e0425",
+            "_id": "563cdecd-71c6-4bfa-9958-2359541ec6b3",
+            "colId": "84929964-6cd9-4a0b-9847-f0a9250fa7ec",
             "containerId": "",
             "name": "productPost",
             "url": "http://localhost:3000/FinalApi/v1/prod",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-06T22:19:59.934Z",
-            "modified": "2024-03-06T22:28:41.141Z",
+            "created": "2024-03-08T23:12:13.150Z",
+            "modified": "2024-03-08T23:21:57.112Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n \"name\": \"victus hp\",\n \"description\": \"computadora portatil\",\n \"price\": 5000.00,\n \"category\": \"65e8ea247a504eb46ff4af56\"\n}",
+                "raw": "{\n \"name\": \"victus hp\",\n \"description\": \"computadora portatil\",\n \"price\": 5000.00,\n \"stockProduc\": 4000,\n \"category\": \"65eb9c6305e0097d5f80c197\"\n}",
                 "form": []
             },
-            "reqType": "get",
+            "reqType": "post",
             "tests": []
         }
     ]
