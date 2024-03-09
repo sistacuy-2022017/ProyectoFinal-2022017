@@ -93,12 +93,6 @@ export const eliminarUser = async (req, res) => {
         });
     }
 
-    if(usuariovalid.id !== id){
-        return res.status(400).json({
-            msg: 'no puedes eliminar un usuario que no es tuyo:c'
-        });
-    }
-
     await Users.findByIdAndUpdate(usuariovalid.id, {userState: false});
 
     res.status(200).json({
