@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const ProductSchema = mongoose.Schema({
     name: {
         type: String,
@@ -16,6 +17,9 @@ const ProductSchema = mongoose.Schema({
     stockProduc: {
         type: Number,
         required: [true, "the stock is a required parameter"],
+    },
+    agotadoProduc: {
+        type: String,
     },
     category: {
         type: mongoose.Schema.Types.ObjectId,
