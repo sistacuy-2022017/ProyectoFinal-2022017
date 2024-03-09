@@ -1,0 +1,29 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "productFinalCollection",
+    "dateExported": "2024-03-06T22:35:02.896Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4ef54760-2f4d-42f8-bb74-ad4f228132fe",
+            "colId": "c8f9e6de-7899-4842-9b78-70fe5a2e0425",
+            "containerId": "",
+            "name": "productPost",
+            "url": "http://localhost:3000/FinalApi/v1/prod",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-06T22:19:59.934Z",
+            "modified": "2024-03-06T22:28:41.141Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"name\": \"victus hp\",\n \"description\": \"computadora portatil\",\n \"price\": 5000.00,\n \"category\": \"65e8ea247a504eb46ff4af56\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}
