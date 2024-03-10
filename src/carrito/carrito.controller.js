@@ -61,12 +61,17 @@ export const agregarProductoAlCarrito = async (req = request, res = response) =>
     try {
         const { comprador, product, cantidad } = req.body;
 
-        // Obtener el detalle del producto para obtener el precio
+        // Obtener el detalle del producto para obtener el precio y el stock disponible
         const productDetails = await Producto.findById(product);
         if (!productDetails) {
             return res.status(404).json({
-                msg: '|| Producto no encontrado ||'
+                msg: 'Producto no encontrado'
             });
+        }
+
+        // Verificar si la cantidad solicitada excede el stock disponible
+        if (productDetails.stockProduc < cantidad) {
+            return res.status(400).json({ message: 'No hay suficiente stock disponible' });
         }
 
         // Verificar si el carrito del comprador ya existe
@@ -74,22 +79,23 @@ export const agregarProductoAlCarrito = async (req = request, res = response) =>
 
         // Si no existe, crea un nuevo carrito para el comprador
         if (!carrito) {
-            carrito = new Carrito({ comprador, productss: [], total: 0 });
+            carrito = new Carrito({ comprador, productss: [], total: 0 }); // Inicializar total a 0
         }
 
         // Verificar si el producto ya está en el carrito
         const productoIndex = carrito.productss.findIndex(item => item.product.toString() === product);
 
         if (productoIndex !== -1) {
-            // Si el producto ya está en el carrito, actualiza la cantidad
-            carrito.productss[productoIndex].cantidad += cantidad;
+            // Si el producto ya está en el carrito, actualiza la cantidad sin exceder el stock disponible
+            const nuevaCantidad = Math.min(productDetails.stockProduc, carrito.productss[productoIndex].cantidad + cantidad);
+            carrito.productss[productoIndex].cantidad = nuevaCantidad;
         } else {
             // Si el producto no está en el carrito, agrégalo
             carrito.productss.push({ product: productDetails, cantidad });
         }
 
         // Recalcula el total del carrito sumando el precio del producto agregado
-        carrito.total += productDetails.price * cantidad;
+        carrito.total = carrito.productss.reduce((total, item) => total + (item.product.price * item.cantidad), 0);
 
         // Guarda el carrito actualizado en la base de datos
         await carrito.save();
