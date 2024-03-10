@@ -12,7 +12,7 @@ import prodcRoutes from '../src/product/product.routes.js';
 import facturaRoutes from '../src/factura/factura.routes.js';
 import carritoRoutes from '../src/carrito/carrito.routes.js';
 import userProp from '../src/users/eliminarProp.routes.js';
-
+import productsOrder from '../src/product/productMost.routes.js';
 class Server {
     constructor() {
         this.app = express();
@@ -24,6 +24,7 @@ class Server {
         this.factPath = '/FinalApi/v1/fact'
         this.carritoPath = '/FinalApi/v1/carr';
         this.userPropPath = '/FinalApi/v1/prop';
+        this.productsOrderPath = '/FinalApi/v1/prodMost';
         this.middlewares();
         this.conectarDBInsanaFinal();
         this.routes();
@@ -49,6 +50,7 @@ class Server {
         this.app.use(this.factPath, facturaRoutes);
         this.app.use(this.carritoPath, carritoRoutes);
         this.app.use(this.userPropPath, userProp);
+        this.app.use(this.productsOrderPath, productsOrder);
     }
 
     listen() {

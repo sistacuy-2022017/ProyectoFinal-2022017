@@ -1,9 +1,10 @@
 import Product from "./product.model.js";
 import { response, request } from "express";
+import Category from "../categorias/category.model.js";
 
 export const productPost = async (req = request, res = response) => {
     const { name, description, price, stockProduc, category } = req.body;
-    const product = new Product({ name, description, price, stockProduc, agotadoProduc, category });
+    const product = new Product({ name, description, price, stockProduc, category });
     console.log(product);
 
     await product.save();
@@ -120,4 +121,71 @@ export const deleteProduct = async (req, res) => {
         auida
     });
 
+};
+
+
+
+export const explorarProductos = async (req, res) => {
+    try {
+        const { action, nombre, category } = req.body;
+
+        let productos;
+
+        switch (action) {
+            case "productos_mas_vendidos":
+                // Aquí puedes implementar la lógica para obtener los productos más vendidos
+                productos = await Product.find().sort({ ventas: -1 }).limit(10);
+                break;
+
+            case "buscar_por_nombre":
+                // Aquí puedes implementar la lógica para buscar productos por nombre
+                var pro;
+                pro = await Product.findOne(nombre);
+                if (pro) {
+                    return res.status(200).json({
+                        msg: '|| productoEncontrado ||',
+                        pro
+                    });
+                }
+                break;
+            case "explorar_categorias":
+                try {
+                    // Buscar todos los productos y poblar los datos de categoría
+                    const productos = await Product.find().populate('category');
+
+                    // Devolver los productos encontrados
+                    return res.status(200).json({ productos });
+                } catch (error) {
+                    console.error(error);
+                    return res.status(500).json({ msg: 'Error en el servidor' });
+                }
+            break;
+
+            case "filtrar_por_categoria":
+                // Busca la categoría por su ID
+                var categorio = await Category.findById(category);
+
+                // Si la categoría no existe, retorna un mensaje de error
+                if (!categorio) {
+                    return { error: 'Categoría no encontrada' };
+                }
+
+                // Busca los productos que tengan la categoría encontrada
+                const products = await Product.find({ category: categorio.id });
+                // Retorna los productos encontrados
+                return res.status(200).json({
+                    m: '|| Productos encontrados por categoría ||',
+                    products
+                });
+                break;
+
+            default:
+                return res.status(400).json({ msg: "Acción no válida" });
+        }
+
+        res.status(200).json({ productos });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Hubo un error al explorar los productos" });
+    }
 };

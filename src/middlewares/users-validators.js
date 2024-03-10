@@ -3,7 +3,7 @@ import userModel from "../users/user.model.js";
 export const verificarUser = (req, res, next) => {
     const { email } = req.body;
 
-    let role = null; 
+    let role = null;
 
     if (email.includes("@org.gt")) {
         role = 'ADMIN';
@@ -16,3 +16,18 @@ export const verificarUser = (req, res, next) => {
     req.body.role = role;
     next();
 };
+
+
+export const existePersonByEmail = async (email = '') => {
+    const tituloMin = email.toLowerCase();
+
+    const existeTittle = await userModel.findOne({
+        email: {
+            $regex: new RegExp(`^${tituloMin}$`, 'i')
+        }
+    });
+
+    if (existeTittle) {
+        throw new Error(`el titulo ${email} ya existe bro`);
+    }
+}
