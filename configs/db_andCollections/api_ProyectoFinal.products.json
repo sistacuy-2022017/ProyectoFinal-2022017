@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "65e8f6548eabe7edb576e382"
+  },
+  "name": "victus hp",
+  "description": "computadora portatil",
+  "price": 5000,
+  "stockProduc": 50,
+  "category": {
+    "$oid": "65e8ea247a504eb46ff4af56"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e930da58530a38579fa85e"
+  },
+  "name": "victus hp2",
+  "description": "computadora portatil2",
+  "price": 5000,
+  "stockProduc": 40,
+  "category": {
+    "$oid": "65e8ea247a504eb46ff4af56"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e930e158530a38579fa860"
+  },
+  "name": "victus hp333",
+  "description": "computadora portatil2",
+  "price": 5000,
+  "stockProduc": 40,
+  "category": {
+    "$oid": "65e8ea247a504eb46ff4af56"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea493e7d03719521216a09"
+  },
+  "name": "tv lg g q think",
+  "description": "televison full hd",
+  "price": 10000,
+  "stockProduc": 40,
+  "category": {
+    "$oid": "65ea492b7d03719521216a07"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb44403fb5470a99afb919"
+  },
+  "name": "pruebaVictusHP2",
+  "description": "televison full hd",
+  "price": 10000,
+  "stockProduc": 40,
+  "category": {
+    "$oid": "65eb1bd03afa399c7e839c03"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf01e12ba3d864318da53"
+  },
+  "name": "prueba1",
+  "description": "televison full hd",
+  "price": 10000,
+  "stockProduc": 0,
+  "category": {
+    "$oid": "65eb44103fb5470a99afb917"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf02112ba3d864318da55"
+  },
+  "name": "prueba2",
+  "description": "televison full hd",
+  "price": 10000,
+  "stockProduc": 0,
+  "category": {
+    "$oid": "65eb44103fb5470a99afb917"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf02412ba3d864318da57"
+  },
+  "name": "prueba3",
+  "description": "televison full hd",
+  "price": 10000,
+  "stockProduc": 0,
+  "category": {
+    "$oid": "65eb44103fb5470a99afb917"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf02812ba3d864318da59"
+  },
+  "name": "prueba4",
+  "description": "televison full hd",
+  "price": 10000,
+  "stockProduc": 0,
+  "category": {
+    "$oid": "65eb44103fb5470a99afb917"
+  },
+  "stateProduct": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed51e9415860dac4db6007"
+  },
+  "name": "prueba6",
+  "description": "tv sepsiiiiiii",
+  "price": 10000,
+  "stockProduc": 10,
+  "category": {
+    "$oid": "65eb44103fb5470a99afb917"
+  },
+  "stateProduct": true,
+  "__v": 0
+}]

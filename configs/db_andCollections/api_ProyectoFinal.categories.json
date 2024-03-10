@@ -1,0 +1,87 @@
+[{
+  "_id": {
+    "$oid": "65e8ea247a504eb46ff4af56"
+  },
+  "nameCategory": "Computo",
+  "descriptionCategory": "computadoras y perifericos",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea492b7d03719521216a07"
+  },
+  "nameCategory": "Televisores",
+  "descriptionCategory": "tvs de toda marca",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eaa2f4a57ec8c722d80b17"
+  },
+  "nameCategory": "asi no era",
+  "descriptionCategory": "yo q c",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb1bd03afa399c7e839c03"
+  },
+  "nameCategory": "Tecnologírfasfa",
+  "descriptionCategory": "tvs de toda marca",
+  "categoryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb1bd03afa399c7e839c05"
+  },
+  "nameCategory": "Tecnologírfasfa",
+  "descriptionCategory": "tvs de toda marca",
+  "categoryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb1bd03afa399c7e839c07"
+  },
+  "nameCategory": "Tecnologírfasfa",
+  "descriptionCategory": "tvs de toda marca",
+  "categoryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb1bd13afa399c7e839c09"
+  },
+  "nameCategory": "Tecnologírfasfa",
+  "descriptionCategory": "tvs de toda marca",
+  "categoryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb1bd13afa399c7e839c0b"
+  },
+  "nameCategory": "Tecnologírfasfa",
+  "descriptionCategory": "tvs de toda marca",
+  "categoryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb1bd13afa399c7e839c0d"
+  },
+  "nameCategory": "Tecnologírfasfa",
+  "descriptionCategory": "TVs de toda marca",
+  "categoryState": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eb44103fb5470a99afb917"
+  },
+  "nameCategory": "Champoo",
+  "descriptionCategory": "champoo",
+  "categoryState": false,
+  "__v": 0
+}]

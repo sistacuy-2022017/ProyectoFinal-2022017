@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "65ed39970d405be6c5696166"
+  },
+  "comprador": {
+    "$oid": "65ed1cd5632e39ebadbe7a5d"
+  },
+  "productss": [
+    {
+      "product": {
+        "$oid": "65e930da58530a38579fa85e"
+      },
+      "cantidad": 1,
+      "_id": {
+        "$oid": "65ed39970d405be6c5696168"
+      }
+    },
+    {
+      "product": {
+        "$oid": "65e930da58530a38579fa85e"
+      },
+      "cantidad": 40,
+      "_id": {
+        "$oid": "65ed3c0694c18ee2b9e80272"
+      }
+    },
+    {
+      "product": {
+        "$oid": "65e930da58530a38579fa85e"
+      },
+      "cantidad": 40,
+      "_id": {
+        "$oid": "65ed3c0e94c18ee2b9e8027a"
+      }
+    }
+  ],
+  "carritoState": true,
+  "__v": 2,
+  "total": 405000
+}]

@@ -1,0 +1,99 @@
+[{
+  "_id": {
+    "$oid": "65e662375fc470c3098bc94f"
+  },
+  "name": "Davi",
+  "email": "davi-2022062@kinal.edu.gt",
+  "password": "$2a$10$ogpAVsuBQetdLMutoqRwluXGSRi9Ki3vrHX.9J9Jg8t05hxQJjmbC",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e662745fc470c3098bc951"
+  },
+  "name": "Diego",
+  "email": "diego-2022277@org.gt",
+  "password": "$2a$10$Gwd994KgyDrdn6dWmbtPueBGK/IzrzlkaZdbKZ2Q3DggtzZDocKfW",
+  "role": "ADMIN",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed1cd5632e39ebadbe7a5d"
+  },
+  "name": "Dieguito2002",
+  "email": "diego1-2022277@kinal.edu.gt",
+  "password": "$2a$10$9pSolYbAXNADlyfJFP4Ls.7QUKXwvc1USLdZCxIZKOpfnMv9aZEg2",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed1cd9632e39ebadbe7a5f"
+  },
+  "name": "Diego12",
+  "email": "diego12-2022277@kinal.edu.gt",
+  "password": "$2a$10$yxRtXfZbJixTJJdLg8YskeT15y/D.ZkVe0XorjjgUp8fcgeL3JZyG",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed1cdf632e39ebadbe7a61"
+  },
+  "name": "Diego13",
+  "email": "diego13-2022277@kinal.edu.gt",
+  "password": "$2a$10$zWp25.Hv/zrRJaQBb1d9dOaK/6IljiJFbiiRUrZbkvkiWvG.letY6",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed1ce3632e39ebadbe7a63"
+  },
+  "name": "Diego14",
+  "email": "diego14-2022277@kinal.edu.gt",
+  "password": "$2a$10$IQUnyjriiQWbU4avZ3O3b.MtMUO9FcbE8WiVGBCl/JeiV3e35at3m",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed44eb1742a9f3cd1a86ce"
+  },
+  "name": "Diego14",
+  "email": "diego14-2022277@kinal.edu.gt",
+  "password": "$2a$10$gpZz8iJiwF1Muv1cFzlcYecKHeY8bwAR8nV/LyTJVywZNiYEZxFg6",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed44ec1742a9f3cd1a86d0"
+  },
+  "name": "Diego14",
+  "email": "diego14-2022277@kinal.edu.gt",
+  "password": "$2a$10$j.XbAmYlHzpBzpB60AHPTesVt/tCCy7oD79GhHlU/RrKaixDj0zB6",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed45e07e3072fe821b4776"
+  },
+  "name": "Diego14",
+  "email": "diego14-2022277@kinal.edu.gt",
+  "password": "$2a$10$wL4xvJE5sg7TVp9kZtJIruxKXP/y61HwnpCZYOvf.GDrMtvetklTi",
+  "role": "CLIENT",
+  "userState": true,
+  "__v": 0
+}]

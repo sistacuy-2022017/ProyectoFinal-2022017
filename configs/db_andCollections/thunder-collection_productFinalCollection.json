@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "productFinalCollection",
-    "dateExported": "2024-03-10T04:55:38.158Z",
+    "dateExported": "2024-03-10T06:28:35.641Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-06T22:19:59.934Z",
-            "modified": "2024-03-09T05:14:19.895Z",
+            "modified": "2024-03-10T06:22:38.383Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n \"name\": \"prueba5\",\n \"description\": \"televison full hd\",\n \"price\": 10000.00,\n \"stockProduc\": 0,\n \"category\": \"65eb44103fb5470a99afb917\"\n}",
+                "raw": "{\n \"name\": \"prueba6\",\n \"description\": \"televison full hd\",\n \"price\": 10000.00,\n \"stockProduc\": 10,\n \"category\": \"65eb44103fb5470a99afb917\"\n}",
                 "form": []
             },
             "reqType": "post",
@@ -30,23 +30,24 @@
             "colId": "c8f9e6de-7899-4842-9b78-70fe5a2e0425",
             "containerId": "",
             "name": "productoPut",
-            "url": "http://localhost:3000/FinalApi/v1/prod/65eb44403fb5470a99afb919",
+            "url": "http://localhost:3000/FinalApi/v1/prod/65ed51e9415860dac4db6007",
             "method": "PUT",
             "sortNum": 20000,
             "created": "2024-03-09T04:55:22.151Z",
-            "modified": "2024-03-09T05:04:13.993Z",
+            "modified": "2024-03-10T06:26:55.209Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NjI3NDVmYzQ3MGMzMDk4YmM5NTEiLCJpYXQiOjE3MDk5NjA2MTEsImV4cCI6MTcwOTk2NDIxMX0.8oRp2Oe-wxBi8QBIhJRsAEXU9ZZaTzKTI-782-5PxNA"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NjI3NDVmYzQ3MGMzMDk4YmM5NTEiLCJpYXQiOjE3MTAwNTE5MDQsImV4cCI6MTcxMDA1NTUwNH0.vRoNHpm27QEVKlyo23c4oC6sTS8PouxLcY5x-n1aiyg"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"pruebaVictusHP2\"\n}",
+                "raw": "{\n  \"description\": \"tv sepsiiiiiii\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
@@ -61,6 +62,25 @@
             "modified": "2024-03-09T05:11:24.941Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "34882034-6361-4285-a79f-a91c5fb61890",
+            "colId": "c8f9e6de-7899-4842-9b78-70fe5a2e0425",
+            "containerId": "",
+            "name": "productsOrder",
+            "url": "http://localhost:3000/FinalApi/v1/prodMost",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-03-10T05:39:11.472Z",
+            "modified": "2024-03-10T06:21:45.247Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"action\": \"explorar_categorias\",\n  \"category\": \"65e8ea247a504eb46ff4af56\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
