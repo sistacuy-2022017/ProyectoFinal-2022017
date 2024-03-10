@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "HistorialCollection",
+    "dateExported": "2024-03-10T04:56:07.412Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1cd25684-868f-436a-9cc9-bb12d88542da",
+            "colId": "51a132cd-212f-4cf6-8e29-f7710961d141",
+            "containerId": "",
+            "name": "historialCompraUserGet",
+            "url": "http://localhost:3000/FinalApi/v1/auth",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-10T02:04:20.090Z",
+            "modified": "2024-03-10T04:31:27.364Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMWNkNTYzMmUzOWViYWRiZTdhNWQiLCJpYXQiOjE3MTAwNDQ3NjIsImV4cCI6MTcxMDA0ODM2Mn0.Y9_PWu4T02ugQhs0gBw6t5L1fcDyAN9eyRQlcIn-x90"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

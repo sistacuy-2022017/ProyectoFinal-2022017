@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "UsersFinalCollection",
-    "dateExported": "2024-03-09T05:43:20.710Z",
+    "dateExported": "2024-03-10T04:55:00.316Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-04T22:29:28.554Z",
-            "modified": "2024-03-09T04:39:23.722Z",
+            "modified": "2024-03-10T02:37:23.788Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"Diego6\",\n  \"email\": \"diego6-2022277@kinal.edu.gt\",\n  \"password\": \"12345\"\n}",
+                "raw": "{\n  \"name\": \"Diego14\",\n  \"email\": \"diego14-2022277@kinal.edu.gt\",\n  \"password\": \"12345\"\n}",
                 "form": []
             },
             "reqType": "post",
@@ -45,6 +45,54 @@
             "body": {
                 "type": "json",
                 "raw": "{\n  \"password\": \"12345\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e457eae3-eba1-49fa-bee3-47e1df147816",
+            "colId": "125f1b69-87eb-4a21-acca-8e541ee22f97",
+            "containerId": "",
+            "name": "eliminarUSerProp",
+            "url": "http://localhost:3000/FinalApi/v1/prop/65ebe7eb3a5e9db2ff29e1b9",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-10T02:17:32.895Z",
+            "modified": "2024-03-10T02:36:50.554Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViZTdlYjNhNWU5ZGIyZmYyOWUxYjkiLCJpYXQiOjE3MTAwMzgxMTYsImV4cCI6MTcxMDA0MTcxNn0.T_-H74N0FxbZQUk_SOSIrxAyOvdjdHd5feTRi1CMGV8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"12345\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c742839f-5d16-487c-b941-45e7b74da0fa",
+            "colId": "125f1b69-87eb-4a21-acca-8e541ee22f97",
+            "containerId": "",
+            "name": "actualizarUserProp",
+            "url": "http://localhost:3000/FinalApi/v1/prop/65ed1cd5632e39ebadbe7a5d",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-10T02:34:06.829Z",
+            "modified": "2024-03-10T02:40:47.005Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkMWNkNTYzMmUzOWViYWRiZTdhNWQiLCJpYXQiOjE3MTAwMzgzMDgsImV4cCI6MTcxMDA0MTkwOH0.PFLMFtnc1bs-vvEyim-krwVJGu9fA1ii3MbQ0N24sf8"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"12345\",\n  \"name\": \"Dieguito2002\"\n}",
                 "form": []
             },
             "tests": []
