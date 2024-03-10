@@ -11,7 +11,7 @@ export const userLogi = async (req = request, res = response) => {
 
         if (email) {
             user = await Users.findOne({ email });
-        } else{
+        } else {
             return res.status(500).json({
                 msg: '|| DEBE PROPORCIONAR UN CORREO VALIDO ||'
             });
@@ -47,3 +47,20 @@ export const userLogi = async (req = request, res = response) => {
         });
     }
 }
+
+export const historialDeCompra = async (req = request, res = response) => {
+    try {
+        const usuarioValid = req.admin;
+
+        // Buscar todas las facturas del usuario en la base de datos
+        const facturas = await Factura.find({ comprador: usuarioValid._id }).populate('productos.producto');
+
+        res.status(200).json({
+            msg: 'Historial de compras obtenido exitosamente',
+            facturas
+        });
+    } catch (error) {
+        console.error('Error al obtener el historial de compras:', error);
+        res.status(500).json({ msg: 'Hubo un error al obtener el historial de compras' });
+    }
+};

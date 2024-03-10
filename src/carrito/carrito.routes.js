@@ -1,16 +1,17 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validarCampos.js";
-import { completarCompra } from "./factura.controller.js";
 import { validarJWT } from "../helpers/validar-jwt.js";
-const facturaRoutes = Router();
+import { agregarProductoAlCarrito } from "./carrito.controller.js";
+const routerCarrito = Router();
 
-facturaRoutes.get(
+routerCarrito.post(
     '/',
     [
-        validarJWT
+        validarJWT,
+        validarCampos
     ],
-    completarCompra
+    agregarProductoAlCarrito
 );
 
-export default facturaRoutes;
+export default routerCarrito;

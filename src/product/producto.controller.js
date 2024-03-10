@@ -70,7 +70,7 @@ export const getProductStockAndSalesStatus = async (req, res) => {
                 default:
                     agotadoProduct = 'Disponible';
             }
-            const isMostSold = allProducts.indexOf(product) < 100; // Primeros 5 productos más vendidos
+            const isMostSold = allProducts.indexOf(product) < 10; // Primeros 5 productos más vendidos
 
             return {
                 _id: product._id,
@@ -89,4 +89,35 @@ export const getProductStockAndSalesStatus = async (req, res) => {
         console.error('Error al obtener el estado del stock y productos más vendidos:', error);
         res.status(400).json({ error: error.message });
     }
+};
+
+export const deleteProduct = async (req, res) => {
+    const { id } = req.params;
+    const usuariovalidacion = req.admin;
+
+    if (usuariovalidacion.role !== "ADMIN_ROLE") {
+        return res.status(400).json({
+            msg: "|| TU NO PUEDES ELIMINAR PRODUCTOS ||"
+        });
+    }
+
+
+    const product = await userModel.findById(id);
+    if (!product) {
+        return res.status(400).json({
+            msg: "|| EL PRODUCTO NO FUE ENCONTRADO ||"
+        });
+    }
+
+
+    await Product.findByIdAndUpdate(id, { stateProduct: false });
+
+
+    const auida = await Product.findById(id);
+
+    res.status(200).json({
+        msg: "||  PRODUCTO ELIMINADO EXITOSAMENTE  ||",
+        auida
+    });
+
 };

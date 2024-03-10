@@ -1,28 +1,39 @@
 import mongoose from "mongoose";
-import Product from '../product/product.model.js'
+const { Schema } = mongoose;
 
-const facturaSchema = mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+const FacturaSchema = new Schema({
+    comprador: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     },
-    issueDate: {
-        type: Date,
-        default: Date.now
-    },
+    productos: [{
+        producto: {
+            type: Schema.Types.ObjectId,
+            ref: "Product",
+            required: true
+        },
+        cantidad: {
+            type: Number,
+            required: true
+        },
+        precioUnitario: {
+            type: Number,
+            required: true
+        },
+        subtotal: {
+            type: Number,
+            required: true
+        }
+    }],
     total: {
         type: Number,
+        required: true
     },
-    products: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
-    }]
+    fecha: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-facturaSchema.methods.toJSON = function () {
-    const { __v, _id, ...factures } = this.toObject();
-    factures.uid = _id;
-    return factures;
-}
-
-export default mongoose.model('Factura', facturaSchema);
+export default mongoose.model("Factura", FacturaSchema);
