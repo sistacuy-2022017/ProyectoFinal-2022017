@@ -1,6 +1,7 @@
 import Product from "./product.model.js";
 import { response, request } from "express";
 import Category from "../categorias/category.model.js";
+import userModel from "../users/user.model.js";
 
 export const productPost = async (req = request, res = response) => {
     const { name, description, price, stockProduc, category } = req.body;
@@ -96,14 +97,14 @@ export const deleteProduct = async (req, res) => {
     const { id } = req.params;
     const usuariovalidacion = req.admin;
 
-    if (usuariovalidacion.role !== "ADMIN_ROLE") {
+    if (usuariovalidacion.role !== "ADMIN") {
         return res.status(400).json({
             msg: "|| TU NO PUEDES ELIMINAR PRODUCTOS ||"
         });
     }
 
 
-    const product = await userModel.findById(id);
+    const product = await Product.findById(id);
     if (!product) {
         return res.status(400).json({
             msg: "|| EL PRODUCTO NO FUE ENCONTRADO ||"
@@ -140,7 +141,7 @@ export const explorarProductos = async (req, res) => {
             case "buscar_por_nombre":
                 // Aquí puedes implementar la lógica para buscar productos por nombre
                 var pro;
-                pro = await Product.findOne(nombre);
+                pro = await Product.findOne({name: nombre});
                 if (pro) {
                     return res.status(200).json({
                         msg: '|| productoEncontrado ||',
@@ -177,6 +178,10 @@ export const explorarProductos = async (req, res) => {
                     m: '|| Productos encontrados por categoría ||',
                     products
                 });
+                break;
+            case "mostrar_stock_cero":
+                    // Buscar productos cuyo stock sea cero
+                    productos = await Product.find({ stockProduc: 0 });
                 break;
 
             default:

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { categoryPost, categoryPut, categoryDelete } from "./category.controller.js";
+import { categoryPost, categoryPut, categoryDelete, getCategoryByName } from "./category.controller.js";
 import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validarCampos.js";
 import { validarJWT } from "../helpers/validar-jwt.js";
@@ -31,6 +31,15 @@ routerCateg.delete(
         validarCampos
     ],
     categoryDelete
+);
+
+routerCateg.get(
+    '/:nameCategori',
+    [
+        validarJWT,
+        validarCampos
+    ],
+    getCategoryByName
 );
 
 export default routerCateg;

@@ -7,6 +7,15 @@ export const usersPost = async (req, res) => {
     const { name, email, password, role } = req.body;
 
     try {
+        // Verifica si ya existe algún usuario con el rol ADMIN_ROLE
+        const existingAdminUser = await Users.findOne({ role: 'ADMIN' });
+        
+        if (existingAdminUser) {
+            return res.status(400).json({
+                error: 'Ya existe un usuario con el rol ADMIN_ROLE. No se puede agregar otro.'
+            });
+        }
+
         const user = new Users({ name, email, password, role });
 
         const encrip = bcryptjs.genSaltSync();
@@ -24,6 +33,7 @@ export const usersPost = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 };
+
 
 export const usersUpdate = async (req, res) => {
     const { id } = req.params;

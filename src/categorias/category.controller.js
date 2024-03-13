@@ -97,3 +97,20 @@ export const categoryDelete = async (req, res) => {
         });
     }
 }
+
+export const getCategoryByName = async (req, res) => {
+    const { nameCategori } = req.params;
+
+    try {
+        const category = await Category.findOne({ nameCategory: nameCategori });
+
+        if (!category) {
+            return res.status(404).json({ error: 'Categoría no encontrada' });
+        }
+
+        res.status(200).json({ category });
+    } catch (error) {
+        console.error('Error al buscar la categoría: ', error);
+        res.status(500).json({ error: 'Error del servidor' });
+    }
+};
